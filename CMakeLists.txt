@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.14)
 # Project information
 project(Mag
-	VERSION 1.0.0
+	VERSION 1.1.0
 	DESCRIPTION "Mag interface"
 	LANGUAGES CXX
 )
@@ -9,10 +9,8 @@ project(Mag
 add_library(mag INTERFACE)
 # Setup include directories 
 target_include_directories(mag INTERFACE include/)
-# Compile options
-add_compile_options(
-	$<$<COMPILE_LANGUAGE:CXX>:-std=c++20>
-)
+# Need C++20
+target_compile_options(mag INTERFACE -std=c++20)
 
 # Example if this project is built separately
 if (PROJECT_NAME STREQUAL CMAKE_PROJECT_NAME)

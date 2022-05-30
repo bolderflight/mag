@@ -1,4 +1,8 @@
-# mag
+[![Pipeline](https://gitlab.com/bolderflight/software/mag/badges/main/pipeline.svg)](https://gitlab.com/bolderflight/software/mag/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+![Bolder Flight Systems Logo](img/logo-words_75.png)
+
+# Mag
 Defines a common interface for magnetometers.
    * [License](LICENSE.md)
    * [Changelog](CHANGELOG.md)
@@ -60,4 +64,5 @@ Health is determined by whether the sensor fails to read 5 times in a row at the
 **Mag** Concepts are used to define what an *Mag* compliant object looks like and provide a means to templating against an *Mag* interface. The required methods are:
 
 **bool Config(const MagConfig &ref)** This method should receive an *MagConfig* struct and setup the sensor driver configuration. Note that the configuration should be applied in the *Init* method, this simply checks the configuration for validity and sets up the sensor driver object. True is returned if the config is valid, otherwise false if returned.
+
 **MagData mag_data()** This method returns the *MagData* from the last successful *Read*.

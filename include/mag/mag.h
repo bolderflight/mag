@@ -2,7 +2,7 @@
 * Brian R Taylor
 * brian.taylor@bolderflight.com
 * 
-* Copyright (c) 2021 Bolder Flight Systems Inc
+* Copyright (c) 2022 Bolder Flight Systems Inc
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the “Software”), to
@@ -32,8 +32,8 @@ namespace bfs {
 
 struct MagConfig {
   float mag_bias_ut[3];
-  float mag_scale[3][3];
-  float rotation[3][3];
+  float mag_scale[3][3] = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
+  float rotation[3][3] = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
 };
 struct MagData {
   bool new_data;
